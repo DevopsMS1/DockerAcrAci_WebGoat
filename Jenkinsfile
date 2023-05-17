@@ -17,7 +17,7 @@ pipeline {
 
         stage ('checkout') {
             steps {
-            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/michalstudenny/DockerAcrAci']])
+            checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/DevopsMS1/DockerAcrAci_WebGoat']])
             }
         }
        
