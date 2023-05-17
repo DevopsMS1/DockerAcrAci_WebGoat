@@ -4,7 +4,7 @@ services:
     build:
       context: ./webgoat_docker
       dockerfile:  Dockerfile
-    image: ${registryUrl}/centos:${BUILDFULLNAME}
+    image: ${registryUrl}/webgoat:${BUILDFULLNAME}
     tty: true
     ports:
         - "80:80"
