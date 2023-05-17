@@ -1,18 +1,7 @@
 version: '3'
 services:
   webgoat:
-    build:
-      context: ./webgoat_docker
-      dockerfile:  Dockerfile
-    image: ${registryUrl}/webgoat:${BUILDFULLNAME}
-    tty: true
+    image: webgoat/webgoat-8.1
     ports:
-        - "80:80"
-    volumes:
-      - mydata:/mount/test-volume
-volumes:
-  mydata:
-    driver: azure_file
-    driver_opts:
-      share_name: myfileshare
-      storage_account_name: michaldevopsstorage
+      - "8080:8080"
+    restart: always
