@@ -27,6 +27,16 @@ services:
     image: ${registryUrl}/nginx:${BUILDFULLNAME}
     tty: true
     ports:
+        - "81:81"
+    volumes:
+      - mydata:/mount/test-volume
+  WebGoat:
+    build:
+      context: ./webgoat_docker
+      dockerfile:  Dockerfile
+    image: ${registryUrl}/centos:${BUILDFULLNAME}
+    tty: true
+    ports:
         - "80:80"
     volumes:
       - mydata:/mount/test-volume
